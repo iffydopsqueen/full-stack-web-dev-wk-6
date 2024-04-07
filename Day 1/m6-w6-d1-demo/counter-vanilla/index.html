@@ -17,11 +17,32 @@
     <script>
 
       // write function here
+      function counter(state, action) {
+        if (typeof state === 'undefined') {
+          return 0
+        }
 
-      
-    
+        switch (action.type) {
+          case 'INCREMENT':
+            return state + 1
+          case 'DECREMENT':
+            return state - 1
+          default:
+            return state
+        }
+      }
 
       // setup variables and render function here
+      var store = Redux.createStore(counter)
+      var valueE1 = document.getElementById('value')
+
+      function render() {
+        valueE1.innerHTML = 
+          store.getState().toString()
+      }
+
+      render() 
+      store.subscribe(render)
 
      
 
