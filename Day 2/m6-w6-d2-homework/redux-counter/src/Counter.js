@@ -1,5 +1,7 @@
 import React from 'react';
 import { connect } from 'react-redux';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import './App.css';
 
 class Counter extends React.Component {
 
@@ -11,14 +13,19 @@ class Counter extends React.Component {
         this.props.dispatch({ type: 'DECREMENT' });
     }
 
+    reset = () => {
+        this.props.dispatch({ type: 'RESET' });
+    }
+
     render() {
         return (
-            <div>
+            <div className="container">
                 <h2>Counter</h2>
-                <div>
-                    <span>{this.props.count}</span>
+                <div className="bg-info p-3">
+                    <span className="border-span mr-3">{this.props.count}</span>
                     <button onClick={this.decrement}>-</button>
                     <button onClick={this.increment}>+</button>
+                    <button onClick={this.reset}>reset</button>
                 </div>
             </div>
         )

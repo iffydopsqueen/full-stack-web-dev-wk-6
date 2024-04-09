@@ -36,3 +36,13 @@
     transform: rotate(360deg);
   }
 }
+
+.border-span {
+  border: 1px solid #c9c9c9; /* Add a border surrounding all four sides */
+  padding: 5px; /* Add some padding for better visual */
+  color: white;
+}
+
+button, span {
+  margin-right: 15px;
+}
