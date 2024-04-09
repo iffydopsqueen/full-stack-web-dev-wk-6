@@ -1,15 +1,15 @@
-import { createSlice } from '@reduxjs/toolkit'
+import { createSlice } from '@reduxjs/toolkit';
 
 export const StatusFilters = {
   All: 'all',
   Active: 'active',
   Completed: 'completed',
-}
+};
 
 const initialState = {
   status: StatusFilters.All,
   colors: [],
-}
+};
 
 const filtersSlice = createSlice({
   name: 'filters',
@@ -45,8 +45,8 @@ const filtersSlice = createSlice({
       },
     },
   },
-})
+});
 
-export const { colorFilterChanged, statusFilterChanged } = filtersSlice.actions
+export const { colorFilterChanged, statusFilterChanged } = filtersSlice.actions;
 
-export default filtersSlice.reducer
+export default filtersSlice.reducer;
